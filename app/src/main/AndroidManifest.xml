@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.wpmac.mzeht"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name=".MainApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!--<activity android:name=".databinding.DataBindingActivity">-->
+        <!--</activity>-->
+
+        <!-- <meta-data -->
+        <!-- android:name="UMENG_CHANNEL" -->
+        <!-- android:value="${UMENG_CHANNEL_VALUE}"/> -->
+
+        <activity android:name=".okhttp.OkHttpActivity">
+        </activity>
+        <activity android:name=".retrofit.RetrofitActivity">
+        </activity>
+        <activity android:name=".mvp.PostSearchActivity">
+        </activity>
+        <activity android:name=".diffutil.DiffUtilActivity">
+        </activity>
+        <activity android:name=".BezierCurve.BezierCurveActivity">
+        </activity>
+        <activity android:name=".rxjava.RxjavaActivity">
+        </activity>
+    </application>
+
+</manifest>

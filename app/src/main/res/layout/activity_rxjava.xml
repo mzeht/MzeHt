@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_rxjava"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.wpmac.mzeht.rxjava.RxjavaActivity">
+
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/method0" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0:RxJava基础概念的练习"
+        />
+
+        <Button
+            android:id="@+id/method1" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1:快捷创建事件队列 Observable.just(T...)"
+        />
+        <Button
+            android:id="@+id/method2" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2:快捷创建事件队列 Observable.from(T[]) / from(Iterable ? extends T"
+        />
+        <Button
+            android:id="@+id/method3" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3: subscribe()支持不完整定义的回调，一个参数"
+        />
+
+        <Button
+            android:id="@+id/method4" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3: subscribe()支持不完整定义的回调，两个参数"
+        />
+        <Button
+            android:id="@+id/method5" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3: subscribe()支持不完整定义的回调，三个参数"
+        />
+        <Button
+            android:id="@+id/method6" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="6 线程控制-Scheduler"
+        />
+        <Button
+            android:id="@+id/method7" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7: 变换 map()"
+        />
+
+        <Button
+            android:id="@+id/method9" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="9: 遍历变量"
+        />
+        <Button
+            android:id="@+id/method10" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="9: 遍历变量时添加筛选"
+        />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

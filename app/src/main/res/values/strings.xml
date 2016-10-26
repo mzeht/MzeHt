@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Mzeht</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_data_binding">DataBindingActivity</string>
+    <string name="title_activity_ok_http">OkHttpActivity</string>
+    <string name="title_activity_diff_util">DiffUtil</string>
+</resources>

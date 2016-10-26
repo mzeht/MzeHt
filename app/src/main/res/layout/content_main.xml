@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.wpmac.mzeht.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+
+    <Button
+        android:id="@+id/databing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DataBinglibrary"/>
+    <Button
+        android:id="@+id/okhttp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="okhttp"/>
+
+    <Button
+        android:id="@+id/retrofit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="retrofit"/>
+    <Button
+        android:id="@+id/mvp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="mvp"/>
+
+    <Button
+        android:id="@+id/diffutil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="diffutil"/>
+    <Button
+        android:id="@+id/BezierCurve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BezierCurveShoppingCart"/>
+
+    <Button
+        android:id="@+id/Rxjava"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rxjava"/>
+
+</LinearLayout>
