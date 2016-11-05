@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.wpmac.mzeht.RollTextView.RollTextViewActivity;
 import com.wpmac.mzeht.diffutil.DiffUtilActivity;
 import com.wpmac.mzeht.mvp.PostSearchActivity;
 import com.wpmac.mzeht.okhttp.OkHttpActivity;
@@ -122,6 +123,12 @@ public class MainActivity extends AppCompatActivity
     @OnClick(R.id.Rxjava)
     void Rxjava(){
         Intent intent= new Intent(getApplicationContext(), RxjavaActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.roll_textview)
+    void RollTextView(){
+        Intent intent= new Intent(getApplicationContext(), RollTextViewActivity.class);
         startActivity(intent);
     }
 

@@ -18,11 +18,13 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <!--<activity android:name=".databinding.DataBindingActivity">-->
-        <!--</activity>-->
+        <!-- <activity android:name=".databinding.DataBindingActivity"> -->
+        <!-- </activity> -->
+
 
         <!-- <meta-data -->
         <!-- android:name="UMENG_CHANNEL" -->
@@ -39,6 +41,8 @@
         <activity android:name=".BezierCurve.BezierCurveActivity">
         </activity>
         <activity android:name=".rxjava.RxjavaActivity">
+        </activity>
+        <activity android:name=".RollTextView.RollTextViewActivity">
         </activity>
     </application>
 

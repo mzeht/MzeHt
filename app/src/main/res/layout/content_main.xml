@@ -54,4 +54,9 @@
         android:layout_height="wrap_content"
         android:text="Rxjava"/>
 
+    <Button
+        android:id="@+id/roll_textview" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义滚动TextView"/>
+
 </LinearLayout>

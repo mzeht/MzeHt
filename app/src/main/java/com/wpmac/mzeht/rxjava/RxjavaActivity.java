@@ -18,6 +18,7 @@ import com.wpmac.mzeht.R;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Observable;
@@ -31,11 +32,13 @@ import rx.schedulers.Schedulers;
 
 public class RxjavaActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    private static final String TAG_FOR_LOGGER = "MainActivity_I_LOVE_RXJAVA";
+    private static final String TAG_FOR_LOGGER = "MainActivity";
     private static final String ERROR = "故意让程序出错";
     private static final String JPG = ".jpg";
     private int mCounter;//循环的计数器
-    private ImageView mImageView;
+
+    @BindView(R.id.rxImage)
+    ImageView mImageView;
     private Bitmap mManyBitmapSuperposition = null;
     private Canvas mCanvas = null;
     private ProgressBar mProgressBar;
@@ -49,6 +52,13 @@ public class RxjavaActivity extends AppCompatActivity {
         initializeLogAndDeviceInfo();
         setTitle("Rxjava");
         ButterKnife.bind(this);
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
     }
 
     private void initializeLogAndDeviceInfo() {
@@ -499,6 +509,7 @@ public class RxjavaActivity extends AppCompatActivity {
 
 
     //演示嵌套循环
+    @OnClick(R.id.method8)
     void method8() {
         ArrayList<Student> students = DataFactory.getData();
         int size = students.size();
@@ -601,6 +612,118 @@ public class RxjavaActivity extends AppCompatActivity {
                     @Override
                     public void call(String s) {
                         Logger.d("观察者:" + s);
+                    }
+                });
+
+    }
+
+
+    //---------------------------------------9: 引入flatmap()-------------------------------------------------------------
+
+    /**
+     * 需要:输出每一个学生所有选修的课程
+     * 嵌套循环的RxJava解决方案
+     * 输出每一个学生选修的课程
+     * {@link #method11()}
+     */
+
+    @OnClick(R.id.method12)
+    void method12() {
+
+        //1:被观察者
+
+        //2:被观察者被观察者订阅
+
+        //3:观察者
+
+        Observable.from(DataFactory.getData())
+                .subscribe(new Subscriber<Student>() {
+                    @Override
+                    public void onCompleted() {
+                        Logger.d("观察者:onCompleted()");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Logger.d("观察者:onError(Throwable e)" + e.getMessage());
+                    }
+
+                    @Override
+                    public void onNext(Student student) {
+                        ArrayList<Course> courses = student.courses;
+                        for (Course course : courses) {
+                            Logger.d("观察者:" + course.name);
+                        }
+                    }
+                });
+
+    }
+
+    /**
+     * 需要:输出每一个学生选修的课程,对method12的简化
+     * 嵌套循环的RxJava解决方案
+     * {@link #method12()}
+     * Student->ArrayList<Course>
+     */
+    @OnClick(R.id.method13)
+    void methoad13() {
+        Observable.from(DataFactory.getData())
+                .map(new Func1<Student, ArrayList<Course>>() {
+                    @Override
+                    public ArrayList<Course> call(Student student) {
+                        return student.courses;
+                    }
+                })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<ArrayList<Course>>() {
+                    @Override
+                    public void call(ArrayList<Course> courses) {
+                        for (Course c : courses) {
+                            Logger.d("观察者：" + c.name);
+                        }
+                    }
+                });
+
+    }
+
+
+    //---------------------------------------10: flatMap()的使用-------------------------------------------------------------
+
+    /**
+     * 需要:输出每一个学生选修的课程,对method13的简化
+     * 嵌套循环的RxJava解决方案
+     * {@link #method13()}
+     * Student -> ArrayList<Course> -> Observable<Course> ->
+     */
+
+    void method14() {
+
+        //1:被观察者
+
+        //2:数据转换
+
+        //3:事件产生的线程。
+
+        //4:事件消费的线程。
+
+        //5:被观察者被观察者订阅
+
+        //6:观察者
+
+        // Student->Course
+        Observable.from(DataFactory.getData())
+                .flatMap(new Func1<Student, Observable<Course>>() {
+                    @Override
+                    public Observable<Course> call(Student student) {
+                        return Observable.from(student.courses);
+                    }
+                }).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<Course>() {
+                    @Override
+                    public void call(Course course) {
+                        Logger.d("观察者:" + course.name);
                     }
                 });
 

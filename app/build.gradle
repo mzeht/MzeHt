@@ -8,8 +8,6 @@ def hostName() {
     return System.getProperty("user.name") + "@" + InetAddress.localHost.hostName
 }
 
-
-
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion

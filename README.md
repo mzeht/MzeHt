@@ -14,3 +14,5 @@ The test Demo collection
 *Retrofit Demo
 
 *自定义TextView 滚动显示文字
+
+*Rxjava操作符用法
